@@ -1,73 +1,80 @@
-# Google Sheets Automations: Status Tracking & Smart Link Titles
 
-Google Apps Script utilities that make Google Sheets smarter for managing application trackers or similar workflows.  
-The scripts automate **status summaries**, enforce a **6-month rule**, and create **readable link titles**.
+# Job Tracker App
 
----
-
-## ✨ Features
-
-### 📊 Status Tracking
-- **Automatic Status Summary**  
-  Builds a live `Status Summary` sheet with counts, percentages, and a pie chart of values from Column C.  
-
-- **Color-Coded Chart**  
-  Assigns stable, distinct colors to each status category.  
-
-- **6-Month Rule**  
-  If Column E contains a date older than 6 months, Column C is set to `Completely Ignored`  
-  (unless already marked `Rejected` or `Position Filled`).  
-
-- **Live Updates**  
-  The summary refreshes automatically when Column C changes, or via the **Status Tools** menu.
+Automates job application tracking in Google Sheets using Google Apps Script and clasp.
+Reduces manual spreadsheet work by generating link titles, cleaning outdated entries, and enabling simple summaries.
 
 ---
 
-### 🔗 Smart Link Titles
-- **Column J Auto-Formatting**  
-  Pasting a URL into Column J converts it to a clickable `HYPERLINK` with the label  
-  `"Column A | Column D"`.  
+## Quick Start
 
-- **Dynamic Retitling**  
-  If Column A or D values change, Column J updates its label while preserving the original URL.  
+Prerequisites:
+- A Google Sheet (you can create your own with columns A–J)
+- Node.js and npm installed
+- Google account access to Apps Script
 
-- **One-Click Cleanup**  
-  A menu option retrofits all existing links in Column J to the correct format,  
-  whether they were plain URLs, formulas, or rich-text links.
+Install clasp and log in:
+```bash
+npm install -g @google/clasp
+clasp login
+````
 
----
+Link this project to your Apps Script (container-bound Sheet):
 
-## 🚀 Installation
+```bash
+# In your Sheet: Extensions -> Apps Script (creates a bound script)
+# Then get the Script ID from Apps Script: Project Settings -> Script ID
+clasp clone <SCRIPT_ID>
+```
 
-1. Open your Google Sheet.
-2. Go to **Extensions → Apps Script**.
-3. Delete any existing code in the editor.
-4. Paste the contents of this repo’s `.gs` files.
-5. Save the project, then reload your sheet.
+Configure Script Properties (in Apps Script: File -> Project properties -> Script properties):
 
----
+* SHEET\_ID = your Google Sheet ID
+* DEFAULT\_DELAY = 2000
+* MAX\_RETRIES = 3
 
-## 📋 Usage
+Run:
 
-After installing and reloading:
-
-- You’ll see two new menus in your sheet:
-  - **Status Tools**
-    - *Rebuild Status Summary & Chart*
-    - *Mark old entries as “Completely Ignored”*
-  - **Link Tools**
-    - *Clean up Column J link titles*
-- Edits in Column C, A, D, or J will trigger the scripts automatically.
-- Run menu items manually at any time to force updates.
+* Refresh the Sheet. The script triggers on paste into Column J.
 
 ---
 
-## 🛠 Use Cases
+## Features
 
-- Job application tracking
-- CRM-style contact logs
-- Project or task status boards
-- Any workflow needing clean link titles and status reporting
+* Dynamic link titles: Column J links auto-titled from other columns (e.g., "Column A | Column D")
+* Automatic cleanup: updates old titles to stay in sync
+* Paste trigger: runs immediately on paste (no manual execution)
+* Resilience: basic retries and throttling
+* Planned: CSV log rotation; Salesforce + Microsoft Teams integration
+
+---
+
+## Development
+
+Clone and install dependencies:
+
+```bash
+git clone https://github.com/audreymhoughton/job-tracker-apps.git
+cd job-tracker-apps
+npm install
+```
+
+Push local code to Apps Script:
+
+```bash
+clasp push
+```
+
+---
+
+## Roadmap
+
+* Publish a one-click template Google Sheet
+* Add CSV logging and rotation
+* Add Salesforce and Teams integration
+* Add animated GIF demo
+
+---
 
 ## 📜 License
 Released under the MIT License.  
