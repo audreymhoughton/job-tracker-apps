@@ -3,7 +3,7 @@
 Automates job application tracking in Google Sheets using Google Apps Script and clasp.
 Reduces manual spreadsheet work by generating link titles, cleaning outdated entries, and enabling simple summaries.
 
-Google sheet that these functions operate on: https://docs.google.com/spreadsheets/d/1Mg6oHRJohn4fJ5kVvNN2UISBDhoXLvODQYscG0B-S4g/edit?usp=sharing
+[Google sheet that these functions operate on](https://docs.google.com/spreadsheets/d/1Mg6oHRJohn4fJ5kVvNN2UISBDhoXLvODQYscG0B-S4g/edit?usp=sharing)
 
 ---
 
