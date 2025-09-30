@@ -73,3 +73,4 @@ clasp push
 * Add Salesforce and Teams integration
 * Add animated GIF demo
 
+This project is licensed under the [MIT License](LICENSE).
