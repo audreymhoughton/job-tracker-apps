@@ -69,3 +69,7 @@ After installing and reloading:
 - Project or task status boards
 - Any workflow needing clean link titles and status reporting
 
+## 📜 License
+Released under the MIT License.  
+You are free to use, modify, and distribute this project with attribution and without warranty.
+
