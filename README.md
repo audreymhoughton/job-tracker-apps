@@ -1,45 +1,44 @@
-
-# Job Tracker App
+# 📊 Job Tracker App
 
 Automates job application tracking in Google Sheets using Google Apps Script and clasp.
 Reduces manual spreadsheet work by generating link titles, cleaning outdated entries, and enabling simple summaries.
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 Prerequisites:
 - A Google Sheet (you can create your own with columns A–J)
 - Node.js and npm installed
 - Google account access to Apps Script
 
-Install clasp and log in:
+1. Install clasp and log in:
 ```bash
 npm install -g @google/clasp
 clasp login
 ````
 
-Link this project to your Apps Script (container-bound Sheet):
+2. Link this project to your Apps Script (container-bound Sheet):
+- In your Sheet: Extensions -> Apps Script (creates a bound script)
+- Then get the Script ID from Apps Script: Project Settings -> Script ID
 
 ```bash
-# In your Sheet: Extensions -> Apps Script (creates a bound script)
-# Then get the Script ID from Apps Script: Project Settings -> Script ID
 clasp clone <SCRIPT_ID>
 ```
 
-Configure Script Properties (in Apps Script: File -> Project properties -> Script properties):
+3. Configure Script Properties (in Apps Script: File -> Project properties -> Script properties):
 
 * SHEET\_ID = your Google Sheet ID
 * DEFAULT\_DELAY = 2000
 * MAX\_RETRIES = 3
 
-Run:
+4. Run:
 
 * Refresh the Sheet. The script triggers on paste into Column J.
 
 ---
 
-## Features
+## ⚡ Features
 
 * Dynamic link titles: Column J links auto-titled from other columns (e.g., "Column A | Column D")
 * Automatic cleanup: updates old titles to stay in sync
@@ -49,7 +48,7 @@ Run:
 
 ---
 
-## Development
+## 🔧 Development
 
 Clone and install dependencies:
 
@@ -67,7 +66,7 @@ clasp push
 
 ---
 
-## Roadmap
+🗺️ Roadmap
 
 * Publish a one-click template Google Sheet
 * Add CSV logging and rotation
